@@ -144,3 +144,8 @@ RUN cd /tmp && \
     cd .. && \
     rm -rf qtkeychain
 
+###########################################################################
+
+# We won't use apt anymore, let's cleanup to shrink the image a bit
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
